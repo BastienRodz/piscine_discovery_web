@@ -1,0 +1,11 @@
+div.container {
+    display: flex;
+}
+
+.flex {
+    flex:1;
+}
+
+p {
+    text-align:center;
+}
