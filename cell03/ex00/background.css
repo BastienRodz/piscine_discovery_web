@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.bottom {
+    margin-top: 50px;
+}
+
+.bottom_button {
+    background: linear-gradient(90deg, #169B62 , white, #FF883E);
+}

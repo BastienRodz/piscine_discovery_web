@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
+@import url('http://fonts.cdnfonts.com/css/snickers');
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../ressources/pokemon_wallpaper.jpg);
+    background-size: cover;
+}
+
+.main_title{
+    display: flex;
+}
+
+.main_title .h1{
+    font-size: 5vh;
+    text-align: center;
+    font-family: 'Pokemon Solid', sans-serif;
+    color: #ffcb05;
+    filter: drop-shadow(5px 5px 2px #3c5aa6);
+}
+
+.table_center {
+    display: grid;
+    justify-content: center;
+    filter: drop-shadow(10px, 10px, 5px, rgb(48, 47, 47));
+    width: 450px;
+    min-width: 450px;
+    height: 672px;
+    min-height: 672px;
+    border-radius: 15px;
+    border: 15px solid #e7c30d;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    box-shadow: 20px 12px 20px 0px black;
+}
+
+.table_center:before {
+    background-image: url(../../ressources/background.jpg);
+    background-size: cover;
+    z-index: -1;
+    filter: hue-rotate(140deg);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.character-img {
+    margin: 0 20px;
+    height: 240px;
+    border: 5px solid yellow;
+    overflow: hidden;
+}
+
+.name{
+    margin: 5px 20px 0px 20px;
+}
+
+.labbel {
+    overflow: hidden;
+    background: linear-gradient(90deg, #169B62 , white, #FF883E);
+    font-family: Arial;
+    border-radius: 5px;
+    width: 50px;
+}
+
+.snickers {
+    font-family: 'Snickers', sans-serif;
+    color: #1C2368;
+    text-shadow: 0 2px white, -1px 0 white, 0 4px red
+}
+
+.bottom {
+    margin-top: 50px;
+}
+
+.bottom_button {
+    background: linear-gradient(90deg, #169B62 , white, #FF883E);
+}
