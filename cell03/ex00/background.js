@@ -19,7 +19,28 @@ function randomHexColor() {
     return "#" + hr + hg + hb;
 }
 
+size = 3;
+
+function makeBtnBigger() {
+    var btn = document.getElementById("the-button");
+    var height = btn.offsetHeight;
+    var width = btn.offsetWidth;
+
+    var newHeight;
+    var newWidth;
+
+    newWidth = width + 10;
+    newHeight = height + 10;
+    size += 0.1;
+    btn.style.width = newWidth + 'px';
+    btn.style.height = newHeight + 'px';
+    btn.style.fontSize = size + 'rem'
+}
+
 function changeColor() {
     let hex = randomHexColor();
+    makeBtnBigger();
     document.body.style.background = hex;
 }
+
+
