@@ -1,11 +1,26 @@
-div.container {
-    display: flex;
-}
+body{
+    margin: auto;
+  }
 
-.flex {
-    flex:1;
-}
+  table{
+      margin: auto;
+      border-collapse: collapse;
+      height: 100vh;
+      width: 100%;
+  }
 
-p {
-    text-align:center;
-}
+  .tab1 {
+    text-align: left;
+    width: 50vh;
+    height: 100%;
+    margin: auto;
+    background-color:brown;
+  }
+
+  .tab2 {
+    text-align: left;
+    width: 50vh;
+    height: 100%;
+    margin: auto;
+    background-color:green;
+  }
