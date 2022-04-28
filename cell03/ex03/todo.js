@@ -29,7 +29,7 @@ window.onload = function UpdatePge() {
             area.innerHTML += `
             <div class="task" id="tasked" onclick=RemoveTask()>
                 <span id="taskname">
-                    ${task}
+                    <p id="task_content">${task}</p>
                 </span>
             </div> `;
         }
@@ -37,9 +37,28 @@ window.onload = function UpdatePge() {
     return ;
 }
 
-function removeCookie(ctask)
-{
-    console.log(ctask);
+function deleteAllCookies() {
+    var cookies = document.cookie.split(";");
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
+    console.log(document.cookie);
+}
+
+function setAllCookie() {
+    let tasks = document.querySelectorAll("#task_content");
+    let count = 1;
+    let i = 0;
+
+    while (i < tasks.length)
+    {
+        setCookie("task" + count, tasks[i].textContent, 30);
+        count++;
+        i++;
+    }
 }
 
 function RemoveTask () {
@@ -49,8 +68,9 @@ function RemoveTask () {
         function() {
             if (confirm("Did you really want to delete that task ?"))
             {
-                removeCookie(tasks[i])
+                deleteAllCookies();
                 this.remove();
+                setAllCookie();
             }
             else
                 return ;
@@ -81,7 +101,7 @@ function NewToDo() {
         area.innerHTML += `
         <div class="task" id="tasked" onclick=RemoveTask()>
             <span id="taskname">
-                ${task}
+                <p id="task_content">${task}</p>
             </span>
         </div> `;
         index++;
