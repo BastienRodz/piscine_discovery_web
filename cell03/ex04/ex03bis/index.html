@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.6.0.min.js"></script>
+    <title>To do</title>
+    <style>
+        body {
+            background: linear-gradient(90deg, #83c7b3, #0086bb , #0661a9, #3a3287);
+            display: flex;
+            flex-direction: column;
+            height: 90vh;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ft_list {
+            background: whitesmoke;
+            border-radius: 10px;
+            border: solid 5px #3a3287;
+            min-width: 30vw;
+            min-height: 30vh;
+            position: relative;
+        }
+        .task{
+            border-radius: 5px;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #939697;
+            cursor: pointer;
+            background-color: #c5e1e6;
+            height: 50px;
+            margin-bottom: 8px;
+            padding: 5px 10px;
+            display: flex;
+        }
+
+        .task span{
+            font-family: 'Poppins',sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        .task button{
+            background-color: #0a2ea4;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            height: 100%;
+            width: 40px;
+            border-radius: 5px;
+        }
+
+        .newbtn {
+            text-align: center;
+        }
+    </style>
+    <script src="todo.js"></script>
+</head>
+<body>
+    <h1>To Do List</h1>
+    <div class="ft_list" id="ft_list">
+    </div>
+    <div style="margin-top: 20px;">
+        <button class="new_btn" id="new" onclick="NewToDo()">New</button>
+    </div>
+</body>
+</html>

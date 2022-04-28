@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.6.0.min.js"></script>
+    <title>Calculator</title>
+    <style>
+        body {
+            background: linear-gradient(90deg, #83c7b3, #0086bb , #0661a9, #3a3287);
+        }
+
+        table {
+            border-collapse: separate;
+            border-spacing: 80px 0;
+        }
+
+        td {
+            padding: 10px 0;
+        }
+    </style>
+    <script>
+        function    launchTerminator(){
+                let left = Number(document.getElementById('left').value);
+                let right = Number(document.getElementById('right').value);
+                let operator = document.getElementById('operator').value;
+                let result = 0;
+
+                if (left < 0 || right < 0)
+                {
+                    window.alert("Error :(");
+                    return ;
+                }
+                if (operator == '+')
+                    result = left + right;
+                else if (operator == '-')
+                    result = left - right;
+                else if (operator == '*')
+                    result = left * right;
+                else if (operator == '/' && right != 0)
+                    result = left / right;
+                else if (operator == '%' && right != 0)
+                    result = left % right;
+                else if (operator == '%' && right == 0)
+                {
+                    window.alert("It's over 9000!");
+                    log.alert("It's over 9000!");
+                    return ;
+                }
+                window.alert(result);
+                log.alert(result);
+                return ;
+        }
+
+        function myFunction() {
+            window.alert("Please, use me...");
+        }
+
+        setInterval(function(){
+            myFunction()
+        }, 30000)
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <label for="left">1st number :</label>
+                <input type="text" id="left" name="left" required size="20">
+            </td>
+            <td>
+                <label for="operator>">Operator :</label>
+                <select name="operator" id="operator">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                    <option value="%">%</option>
+            </td>
+            <td>
+                <label for="right">2nd number :</label>
+                <input type = "text" id="right" name="right" required size="20">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: center;">
+                <input type="submit" id="submit" name="submit" value="Try me !" onclick="launchTerminator()">
+            </td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!dOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <script src="jquery-3.6.0.min.js"></script>
+    <title>Circle</title>
+    <style>
+        .circle {
+            background: #ff0000;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+    </style>
+    <script>
+        function changeColorInOrder() {
+            let hex;
+            var circle = document.getElementById("circle");
+            var height = circle.offsetHeight;
+            var width = circle.offsetWidth;
+            var newHeight;
+            var newWidth;
+
+            hex = circle.style.background;
+            if (hex == "rgb(255, 0, 0) none repeat scroll 0% 0%")
+                circle.style.background = "#34a702";
+            else if (hex == "rgb(52, 167, 2) none repeat scroll 0% 0%")
+                circle.style.background = "#2986cc";
+            else
+                circle.style.background = "#ff0000";
+            if (width < 420)
+            {
+                newWidth = width + 10;
+                newHeight = height + 10;
+                circle.style.width = newWidth + 'px';
+                circle.style.height = newHeight + 'px';
+            }
+            else
+            {
+                newWidth = 200;
+                newHeight = 200;
+                circle.style.width = newWidth + 'px';
+                circle.style.height = newHeight + 'px';
+            }
+        }
+
+        function changeColorInverted() {
+            let hex;
+            var circle = document.getElementById("circle");
+            var height = circle.offsetHeight;
+            var width = circle.offsetWidth;
+            var newHeight;
+            var newWidth;
+            
+            hex = circle.style.background;
+            if (hex == "rgb(255, 0, 0) none repeat scroll 0% 0%")
+                circle.style.background = "#2986cc";
+            else if (hex == "rgb(41, 134, 204) none repeat scroll 0% 0%")
+                circle.style.background = "#34a702";
+            else
+                circle.style.background = "#ff0000";
+            if (width > 200)
+            {
+                newWidth = width - 5;
+                circle.style.width = newWidth + 'px';
+                newHeight = height - 5;
+                circle.style.height = newHeight + 'px';
+            }
+            else
+                return ;
+        }
+    </script>
+</head>
+<body>
+    <div class="circle" id="circle" onclick="changeColorInOrder()" onmouseleave="changeColorInverted()">
+    </div>
+</body>
+</html>
